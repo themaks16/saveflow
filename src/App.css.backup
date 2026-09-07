@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{font-family:Inter,system-ui,sans-serif;color:#f5f7fb;background:#080a0e;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-width:320px;background:#080a0e}button,input,select{font:inherit}button{cursor:pointer}.app-shell{min-height:100vh;display:flex;justify-content:center;background:radial-gradient(circle at top,#1a202d 0,#080a0e 42%)}.app{width:100%;max-width:620px;min-height:100vh;padding:28px 20px 105px}.topbar,.section-title,.budget-row,.modal-head{display:flex;align-items:center;justify-content:space-between}.topbar{margin-bottom:24px}.topbar h1{margin:4px 0 0;font-size:27px;letter-spacing:-1px}.eyebrow,.hero-card span,.stat span,label{font-size:11px;letter-spacing:.09em;font-weight:700;color:#8992a4}.avatar{border:1px solid #343c4c;width:42px;height:42px;border-radius:50%;background:#202632;color:#fff;font-weight:700}.hero-card{padding:26px;border-radius:24px;background:linear-gradient(145deg,#1b2230,#11151e);border:1px solid #2c3444;box-shadow:0 20px 50px #0003;display:flex;justify-content:space-between;gap:20px}.hero-card h2{font-size:38px;margin:8px 0;letter-spacing:-2px}.hero-card p{color:#929aaa;font-size:13px;margin:0}.hero-side{text-align:right}.hero-side strong{display:block;margin-top:8px}.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.card{background:#11141b;border:1px solid #252b36;border-radius:20px;padding:20px;margin-bottom:12px}.stat{display:flex;align-items:center;gap:14px;margin:0}.stat h3{margin:5px 0 0;font-size:19px}.icon,.expense-icon,.goal-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#1d2330}.section-title h2,.debt-card h2{margin:5px 0 0;font-size:18px;letter-spacing:-.4px}.section-title>strong{font-size:13px}.progress-track{height:8px;background:#252b35;border-radius:99px;overflow:hidden;margin:20px 0 12px}.progress-bar{height:100%;background:#f2f4f7;border-radius:inherit;transition:width .3s}.progress-bar.savings{background:#aab6c8}.budget-row{font-size:13px;color:#8d95a4}.budget-row strong{color:#f4f6f8}.tip{margin-top:14px;padding:12px;border-radius:12px;background:#171c25;color:#969faf;font-size:12px}.tip b{color:#f4f6f8}.actions{display:grid;grid-template-columns:1.2fr 1fr;gap:10px;margin:14px 0}.primary,.secondary,.danger{border:0;border-radius:14px;padding:14px 16px;font-weight:700}.primary{background:#f1f3f6;color:#0c0e13}.secondary{background:#191e27;color:#f1f3f6;border:1px solid #303744}.danger{background:#301b1d;color:#ffb9bd;border:1px solid #573033;margin-top:10px}.secondary:disabled{opacity:.4;cursor:not-allowed}.small{padding:10px 12px;font-size:12px;white-space:nowrap}.link-button{background:transparent;border:0;color:#e7ebf1;font-weight:700}.debt-card{display:flex;align-items:center;justify-content:space-between;gap:18px}.debt-card p{color:#929aaa;font-size:12px;margin:8px 0 0;max-width:390px}.bottom-nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:min(580px,calc(100% - 28px));padding:8px;display:grid;grid-template-columns:repeat(3,1fr);background:#141820e8;border:1px solid #2b313d;border-radius:18px;backdrop-filter:blur(14px);z-index:5}.bottom-nav button{border:0;background:transparent;color:#777f8d;padding:8px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:20px}.bottom-nav button span{font-size:10px}.bottom-nav button.active{color:#f5f7fb}.overlay{position:fixed;inset:0;background:#000b;display:grid;place-items:end center;padding:16px;z-index:10}.modal{width:min(520px,100%);background:#151922;border:1px solid #303745;border-radius:24px;padding:22px;box-shadow:0 30px 80px #0008}.modal h2{margin:0;font-size:20px}.modal-head{margin-bottom:18px}.modal-head button{border:0;background:#202631;color:#fff;width:32px;height:32px;border-radius:50%;font-size:20px}.modal label{display:block;margin:16px 0 7px}.modal input,.modal select{width:100%;background:#0f1218;color:#fff;border:1px solid #303744;border-radius:12px;padding:13px;outline:none}.modal input:focus,.modal select:focus{border-color:#687386}.big-input{font-size:26px;font-weight:700}.full{width:100%;margin-top:14px}.muted{color:#747d8d;font-size:12px}.expense-list{padding:10px 20px}.expense{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #20252f}.expense:last-child{border-bottom:0}.expense-name{flex:1}.expense-name strong,.expense-name span{display:block}.expense-name strong{font-size:13px}.expense-name span{margin-top:3px;color:#747d8d;font-size:11px}.expense>b{font-size:13px}.page-heading{padding:5px 2px 15px}.page-heading h2{font-size:29px;margin:6px 0}.page-heading p{color:#929aaa;font-size:13px}.empty{text-align:center;padding:45px 10px;color:#747d8d}.big-goal{text-align:center;padding:28px}.goal-icon{margin:0 auto 14px;font-size:22px}.big-goal h2{margin:0;font-size:20px}.goal-amount{font-size:35px;font-weight:800;margin:16px 0 4px;letter-spacing:-1px}.big-goal p{color:#828b9b;font-size:12px}@media(max-width:480px){.app{padding:20px 14px 100px}.hero-card{padding:21px}.hero-card h2{font-size:31px}.hero-side{font-size:12px}.card{padding:17px}.stats-grid{gap:8px}.debt-card{align-items:flex-start}.debt-card .secondary{margin-top:5px}}
+
+/* SaveFlow vNext animations + extra UI */
+.animate-in{animation:sfIn .45s ease both}
+.animate-pop{animation:sfPop .3s ease both}
+.animate-modal{animation:sfModal .25s cubic-bezier(.2,.8,.2,1) both}
+.payment-choice{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+.payment-choice button,.goal-chip{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:inherit;border-radius:14px;padding:13px;cursor:pointer;transition:.2s transform,.2s background,.2s border-color}
+.payment-choice button:hover,.goal-chip:hover{transform:translateY(-2px)}
+.payment-choice button.selected{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.11)}
+.goal-suggestions{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+.goal-chip{text-align:left}
+.mini-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.mini-stat-grid>div,.stat-row{padding:12px;border-radius:14px;background:rgba(255,255,255,.04)}
+.mini-stat-grid span,.stat-row span{display:block;font-size:.78rem;opacity:.65}
+.mini-stat-grid b{display:block;margin-top:5px}
+.stat-row{display:flex;justify-content:space-between;align-items:center;margin:8px 0}
+.split-bar{height:10px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;margin:14px 0}
+.split-bar>div{height:100%;background:currentColor;border-radius:99px;transition:width .6s ease}
+@keyframes sfIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes sfPop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+@keyframes sfModal{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+button:active{transform:scale(.97)}
+.progress-bar{transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.card,.hero-card{transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-2px)}
+@media(max-width:520px){.goal-suggestions{grid-template-columns:1fr 1fr}.mini-stat-grid{grid-template-columns:1fr 1fr}}
+
+/* SaveFlow — Login Pro */
+.auth-shell-pro{min-height:100vh}
+.auth-screen-pro{
+  min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
+  padding:40px 20px;background:
+  radial-gradient(circle at 20% 20%,rgba(255,255,255,.055),transparent 28%),
+  radial-gradient(circle at 85% 80%,rgba(120,150,255,.06),transparent 30%),#080b11;
+}
+.auth-layout{width:min(1040px,100%);display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:stretch;position:relative;z-index:2}
+.auth-brand-panel{
+  min-height:620px;padding:56px 48px;border:1px solid rgba(255,255,255,.09);border-radius:30px;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  box-shadow:0 30px 80px rgba(0,0,0,.28);display:flex;flex-direction:column;justify-content:center;
+}
+.brand-mark{
+  width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin-bottom:24px;
+  font-size:28px;font-weight:900;color:#0b0e14;background:#f4f6f8;box-shadow:0 12px 30px rgba(0,0,0,.2)
+}
+.auth-brand-panel h1{font-size:58px;line-height:1;margin:8px 0 18px;letter-spacing:-3px}
+.auth-brand-panel h1 span{opacity:.52}
+.auth-tagline{max-width:430px;font-size:18px;line-height:1.6;color:#aeb7c8;margin:0 0 34px}
+.auth-features{display:grid;gap:12px}
+.auth-feature{
+  display:flex;gap:14px;align-items:center;padding:15px 16px;border:1px solid rgba(255,255,255,.06);
+  border-radius:16px;background:rgba(255,255,255,.025);transition:transform .2s ease,background .2s ease
+}
+.auth-feature:hover{transform:translateX(4px);background:rgba(255,255,255,.05)}
+.auth-feature>span{
+  width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(255,255,255,.07);font-size:18px
+}
+.auth-feature strong{display:block;font-size:13px;margin-bottom:3px}
+.auth-feature small{display:block;color:#7f899b;font-size:11px}
+.auth-card-pro{
+  position:relative;padding:38px;border:1px solid rgba(255,255,255,.1);border-radius:30px;
+  background:rgba(15,19,27,.92);box-shadow:0 30px 90px rgba(0,0,0,.4);backdrop-filter:blur(18px);
+  align-self:center
+}
+.auth-card-top h2{font-size:31px;line-height:1.1;margin:9px 0 9px;letter-spacing:-1px}
+.auth-card-top p{color:#7f899b;line-height:1.5;margin:0 0 25px;font-size:13px}
+.auth-lang-switch{
+  position:absolute;right:30px;top:30px;display:flex;padding:4px;border-radius:12px;
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.06)
+}
+.auth-lang-switch button{
+  border:0;background:transparent;color:#788296;padding:6px 8px;border-radius:8px;font-size:10px;font-weight:800;cursor:pointer
+}
+.auth-lang-switch button.active{background:rgba(255,255,255,.11);color:#fff}
+.auth-field{margin-bottom:16px}
+.auth-field label{display:block;margin-bottom:7px;font-size:10px;font-weight:800;letter-spacing:1px;color:#8993a5}
+.auth-field input{
+  width:100%;box-sizing:border-box;padding:14px 15px;border-radius:13px;border:1px solid rgba(255,255,255,.09);
+  background:#111620;color:#fff;outline:none;transition:border-color .2s,box-shadow .2s,transform .2s
+}
+.auth-field input::placeholder{color:#4f5869}
+.auth-field input:focus{border-color:rgba(255,255,255,.28);box-shadow:0 0 0 4px rgba(255,255,255,.035);transform:translateY(-1px)}
+.auth-submit{height:50px;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:12px}
+.auth-submit span{font-size:18px;transition:transform .2s}
+.auth-submit:hover span{transform:translateX(4px)}
+.auth-divider{display:flex;align-items:center;gap:10px;margin:19px 0;color:#515b6d;font-size:11px}
+.auth-divider:before,.auth-divider:after{content:"";height:1px;background:rgba(255,255,255,.07);flex:1}
+.auth-switch{min-height:46px}
+.auth-secure{text-align:center;color:#566174;font-size:10px;margin-top:18px}
+.auth-error{margin:0 0 15px;overflow-wrap:anywhere}
+.auth-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.12;pointer-events:none}
+.auth-glow-one{width:260px;height:260px;left:-90px;top:-80px;background:#fff}
+.auth-glow-two{width:300px;height:300px;right:-120px;bottom:-120px;background:#6d8cff}
+@media(max-width:800px){
+  .auth-layout{grid-template-columns:1fr;max-width:520px}
+  .auth-brand-panel{display:none}
+  .auth-card-pro{padding:30px 24px;border-radius:24px}
+  .auth-screen-pro{padding:20px}
+}
+-- SaveFlow Smart Advisor / onboarding migration
+alter table public.profiles
+  add column if not exists onboarding_completed boolean not null default false,
+  add column if not exists monthly_income numeric(12,2) not null default 0,
+  add column if not exists rent numeric(12,2) not null default 0,
+  add column if not exists bills numeric(12,2) not null default 0,
+  add column if not exists food numeric(12,2) not null default 0,
+  add column if not exists transport numeric(12,2) not null default 0,
+  add column if not exists subscriptions numeric(12,2) not null default 0,
+  add column if not exists other_costs numeric(12,2) not null default 0,
+  add column if not exists savings_target_percent numeric(5,2) not null default 10;
+
+alter table public.profiles
+  drop constraint if exists profiles_savings_target_percent_check;
+
+alter table public.profiles
+  add constraint profiles_savings_target_percent_check
+  check (savings_target_percent >= 5 and savings_target_percent <= 30);
+
+alter table public.profiles enable row level security;
+
+drop policy if exists "Users can view own profile" on public.profiles;
+drop policy if exists "Users can create own profile" on public.profiles;
+drop policy if exists "Users can update own profile" on public.profiles;
+
+create policy "Users can view own profile"
+on public.profiles for select to authenticated
+using (auth.uid() = id);
+
+create policy "Users can create own profile"
+on public.profiles for insert to authenticated
+with check (auth.uid() = id);
+
+create policy "Users can update own profile"
+on public.profiles for update to authenticated
+using (auth.uid() = id)
+with check (auth.uid() = id);
+
+grant select, insert, update on public.profiles to authenticated;
+
+/* SaveFlow Smart Advisor */
+.smart-advice-card{display:flex;gap:16px;align-items:flex-start;position:relative;overflow:hidden}
+.smart-advice-card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-90px;top:-90px;background:rgba(255,255,255,.045);filter:blur(5px);pointer-events:none}
+.advice-icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.08);font-size:20px;flex:none}
+.advice-content{flex:1}
+.advice-content h3{margin:5px 0 7px;font-size:18px}
+.advice-content p{margin:0;color:#9ca6b7;line-height:1.55;font-size:13px;max-width:650px}
+.advice-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
+.advice-metrics>div{padding:12px;border-radius:13px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.05)}
+.advice-metrics span{display:block;color:#7f899b;font-size:9px;font-weight:800;letter-spacing:.8px}
+.advice-metrics b{font-size:17px;margin-right:4px}
+.advice-metrics small{color:#697386;font-size:9px}
+
+/* Smart Advisor onboarding */
+.onboarding-overlay{z-index:100}
+.onboarding-modal{width:min(620px,calc(100vw - 30px));max-height:90vh;overflow:auto}
+.onboarding-progress{display:flex;gap:6px;margin-bottom:25px}
+.onboarding-progress span{height:4px;flex:1;border-radius:99px;background:rgba(255,255,255,.08);transition:.35s}
+.onboarding-progress span.on{background:rgba(255,255,255,.75)}
+.onboarding-modal h2{font-size:27px;max-width:430px;margin:7px 0 0}
+.onboarding-subtitle{color:#7f899b;line-height:1.5;font-size:13px;margin:0 0 25px}
+.onboarding-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.onboarding-field{margin:0}
+.onboarding-field label{margin-bottom:6px}
+.onboarding-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.onboarding-preview>div{padding:13px;border-radius:13px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.05)}
+.onboarding-preview span{display:block;color:#7f899b;font-size:9px;font-weight:800;letter-spacing:.7px}
+.onboarding-preview b{display:block;margin-top:5px;font-size:16px}
+.onboarding-actions{display:flex;gap:10px;margin-top:18px}
+.onboarding-actions .primary{flex:1}
+
+/* Small interaction polish */
+button{transition:transform .18s ease,opacity .18s ease,background .18s ease,border-color .18s ease}
+button:active{transform:scale(.97)}
+.progress-bar{transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.card,.hero-card{transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-2px)}
+
+@media(max-width:800px){
+  .auth-layout{grid-template-columns:1fr;max-width:520px}
+  .auth-brand-panel{display:none}
+  .auth-card-pro{padding:30px 24px;border-radius:24px}
+  .auth-screen-pro{padding:20px}
+}
+
+@media(max-width:560px){
+  .onboarding-grid,.onboarding-preview,.advice-metrics{grid-template-columns:1fr}
+  .onboarding-modal{padding:25px 20px}
+}
+
+@media(max-width:520px){
+  .goal-suggestions{grid-template-columns:1fr 1fr}
+  .mini-stat-grid{grid-template-columns:1fr 1fr}
+}
