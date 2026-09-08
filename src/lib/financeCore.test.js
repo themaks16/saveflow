@@ -9,6 +9,8 @@ import {
   calculateMonthlyMetrics,
   calculateEmergencyMonths,
   calculateSpendingPace,
+  calculatePaymentBalances,
+  calculateDailyBudget,
 } from './financeCore.js'
 
 assert.equal(toMdl(100, 'EUR'), 1950)
@@ -24,6 +26,20 @@ const tx = [
 
 assert.equal(calculateBalance({ income: 10000, expenses: 3000, savings: 0 }), 7000)
 
+const balances = calculatePaymentBalances({
+  initialCash: 100,
+  initialCard: 500,
+  savings: 50,
+  transactions: [
+    { type: 'expense', amount: 50, payment_method: 'cash' },
+    { type: 'income', amount: 200, payment_method: 'card' },
+  ],
+})
+assert.equal(balances.cash, 50)
+assert.equal(balances.card, 700)
+assert.equal(balances.total, 750)
+assert.equal(balances.afterSavings, 700)
+
 const affordable = calculateAffordability({ balance: 7000, purchase: 500, safeDailySpend: 300, safetyDays: 3 })
 assert.equal(affordable.affordable, true)
 assert.equal(affordable.after, 6500)
@@ -32,6 +48,10 @@ assert.equal(affordable.safeLimit, 900)
 const expensive = calculateAffordability({ balance: 7000, purchase: 8000, safeDailySpend: 300, safetyDays: 3 })
 assert.equal(expensive.affordable, false)
 assert.equal(expensive.after, -1000)
+
+const daily = calculateDailyBudget({ monthlyIncome: 3000, fixedCosts: 1500, savingsTargetPercent: 10, daysInMonth: 30 })
+assert.equal(daily.daily, 40)
+assert.equal(calculateDailyBudget({ monthlyIncome: 1000, fixedCosts: 900, savingsTargetPercent: 10, daysInMonth: 30, spentToday: 20 }).remainingToday, 0)
 
 const savings = [{ amount: 1000, contribution_date: '2026-09-04' }]
 const metrics = calculateMonthlyMetrics({ transactions: tx, savings, month: '2026-09' })
