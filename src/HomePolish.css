@@ -1,0 +1,34 @@
+/* SaveFlow V1.1 Home polish — mobile-first, no horizontal overflow */
+.saveflow-v3 .home-quick-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.saveflow-v3 .home-quick-action{min-width:0;border:1px solid var(--sf-border);background:var(--sf-surface);border-radius:15px;padding:11px 8px;display:flex;align-items:center;justify-content:center;gap:6px;color:var(--sf-text);font-weight:800;font-size:11px;box-shadow:0 7px 18px rgba(28,53,43,.05);cursor:pointer}
+.saveflow-v3 .home-quick-action span:first-child{width:27px;height:27px;border-radius:9px;background:var(--sf-green-soft);color:var(--sf-green-dark);display:grid;place-items:center;font-size:16px;flex:none}
+.saveflow-v3 .home-quick-action.expense span:first-child{background:#fff0ee;color:#c9544e}
+.saveflow-v3 .home-quick-action.saving span:first-child{background:#eef1ff;color:#4667d9}
+.saveflow-v3 .home-today-card{margin:0 0 12px!important;background:linear-gradient(145deg,#f0faf6,#fff)!important}
+.saveflow-v3 .home-today-card .today-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.saveflow-v3 .home-today-card h3{margin:2px 0 0;font-size:17px}
+.saveflow-v3 .home-today-card .today-icon{width:34px;height:34px;border-radius:11px;background:var(--sf-green-soft);display:grid;place-items:center;font-size:18px;flex:none}
+.saveflow-v3 .home-today-card .today-action{width:100%;margin-top:10px;border:0;border-radius:11px;padding:10px;background:#e5f8ef;color:#08794e;font-size:11px;font-weight:800;cursor:pointer}
+.saveflow-v3 .home-today-card .today-action:active,.saveflow-v3 .home-quick-action:active{transform:scale(.98)}
+
+/* The four Home KPIs stay readable on narrow phones. */
+.saveflow-v3 .stats-grid.home-stats .stat.card{box-sizing:border-box;max-width:100%;overflow:hidden}
+.saveflow-v3 .stats-grid.home-stats .stat h3{max-width:100%;font-variant-numeric:tabular-nums}
+
+@media (max-width:520px){
+  .saveflow-v3 .app{width:100%;box-sizing:border-box;padding-left:12px;padding-right:12px}
+  .saveflow-v3 .v3-hero{gap:9px;padding:16px!important}
+  .saveflow-v3 .v3-hero h2{font-size:27px}
+  .saveflow-v3 .health-badge{min-width:96px;padding:8px}
+  .saveflow-v3 .stats-grid.home-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .saveflow-v3 .stats-grid.home-stats .stat.card{padding:13px!important}
+  .saveflow-v3 .stats-grid.home-stats .stat h3{font-size:19px;letter-spacing:-.5px}
+  .saveflow-v3 .home-quick-action{padding:10px 5px;font-size:10px}
+  .saveflow-v3 .home-quick-action span:first-child{width:25px;height:25px}
+}
+
+@media (max-width:360px){
+  .saveflow-v3 .home-quick-action{gap:4px;font-size:9px}
+  .saveflow-v3 .home-quick-action span:first-child{width:23px;height:23px;font-size:14px}
+  .saveflow-v3 .stats-grid.home-stats .stat h3{font-size:17px}
+}
