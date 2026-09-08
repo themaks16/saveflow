@@ -6,6 +6,8 @@ import { supabase } from './lib/supabase'
 import './financeEnhancements'
 import App from './App.jsx'
 
+globalThis.supabase = supabase
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
