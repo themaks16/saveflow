@@ -1,0 +1,86 @@
+/* SaveFlow Premium — one cohesive visual system, no DOM enhancers */
+.saveflow-v3{
+  --p-bg:#f4f7f5; --p-card:rgba(255,255,255,.96); --p-ink:#13211b; --p-muted:#7a8781;
+  --p-green:#21d889; --p-green-dark:#0b9d65; --p-line:#e2e9e5; --p-soft:#e7f8f0;
+}
+.saveflow-v3 .app{max-width:680px!important;padding:18px 16px calc(118px + env(safe-area-inset-bottom))!important}
+.saveflow-v3 .topbar{padding:3px 2px 18px!important;margin-bottom:0!important}
+.saveflow-v3 .brand-lockup{display:flex;align-items:center!important}
+.saveflow-v3 .brand-mark{width:40px!important;height:40px!important;border-radius:14px!important;background:linear-gradient(145deg,#dffbef,#baf2d8)!important;box-shadow:0 7px 18px rgba(33,216,137,.14)!important}
+.saveflow-v3 .brand-lockup h1{font-size:21px!important;font-weight:800!important}
+.saveflow-v3 .avatar{box-shadow:0 5px 16px rgba(20,45,35,.08)!important}
+
+/* Home command center */
+.saveflow-v3 .v3-hero{position:relative!important;min-height:142px!important;padding:22px!important;border-radius:25px!important;background:linear-gradient(135deg,#123e33 0%,#0c2922 62%,#081c17 100%)!important;box-shadow:0 18px 42px rgba(10,54,41,.18)!important;overflow:hidden!important}
+.saveflow-v3 .v3-hero:after{content:"";position:absolute;right:-55px;bottom:-80px;width:190px;height:190px;border-radius:50%;background:rgba(56,225,156,.12);filter:blur(2px)}
+.saveflow-v3 .v3-hero h2{font-size:34px!important;letter-spacing:-1.7px!important}
+.saveflow-v3 .health-badge{position:relative;z-index:1;min-width:116px!important;border-radius:18px!important;background:rgba(255,255,255,.09)!important;backdrop-filter:blur(10px)}
+.saveflow-v3 .health-badge strong{font-size:32px!important}
+.saveflow-v3 .stats-grid.home-stats{gap:11px!important}
+.saveflow-v3 .stats-grid.home-stats .stat.card{border-radius:18px!important;transition:transform .2s ease,box-shadow .2s ease!important}
+.saveflow-v3 .stats-grid.home-stats .stat.card:hover{transform:translateY(-2px);box-shadow:0 13px 30px rgba(28,53,43,.10)!important}
+.saveflow-v3 .stats-grid.home-stats .stat h3{font-size:23px!important}
+.saveflow-v3 .income-cta{border-radius:18px!important;padding:15px 17px!important;box-shadow:0 10px 24px rgba(33,216,137,.10)!important}
+.saveflow-v3 .income-icon{box-shadow:inset 0 0 0 1px rgba(11,157,101,.05)}
+
+/* Premium cards */
+.saveflow-v3 .card{border-radius:21px!important;box-shadow:0 9px 28px rgba(28,53,43,.055)!important;transition:box-shadow .2s ease,transform .2s ease}
+.saveflow-v3 .section-title h2{font-weight:800!important}
+.saveflow-v3 .savings-card,.saveflow-v3 .smart-advice-card{position:relative}
+.saveflow-v3 .savings-card:before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:3px;border-radius:9px;background:var(--p-green)}
+.saveflow-v3 .smart-advice-card{border-left:3px solid #f1c85a!important}
+.saveflow-v3 .savings-pill{transition:transform .18s ease,background .18s ease!important}
+.saveflow-v3 .savings-pill:hover{transform:translateX(2px);background:#f2faf6!important}
+
+/* Statistics: hierarchy first, details second */
+.saveflow-v3 .health-card{border-radius:23px!important;padding:19px!important}
+.saveflow-v3 .health-top h2{font-size:44px!important}
+.saveflow-v3 .chart-card{padding-bottom:16px!important}
+.saveflow-v3 .spark-chart{height:158px!important;border-radius:18px!important;background:linear-gradient(180deg,#f3fbf7,#f8fbfa)!important}
+.saveflow-v3 .report-grid>div{border-radius:14px!important;transition:transform .18s ease}
+.saveflow-v3 .report-grid>div:hover{transform:translateY(-1px)}
+.saveflow-v3 .donut-wrap{grid-template-columns:145px minmax(0,1fr)!important}
+
+/* Goals: one hero goal, clean supporting list */
+.saveflow-v3 .goal-card{border-radius:21px!important}
+.saveflow-v3 .goal-card:first-of-type{box-shadow:0 12px 32px rgba(28,53,43,.09)!important}
+.saveflow-v3 .goal-head-actions>strong{font-size:13px!important}
+.saveflow-v3 .goal-suggestions{margin:2px 0 4px!important}
+.saveflow-v3 .goal-chip{border-radius:13px!important;transition:transform .18s ease,box-shadow .18s ease!important}
+.saveflow-v3 .goal-chip:hover{transform:translateY(-2px)!important;box-shadow:0 7px 18px rgba(28,53,43,.07)!important}
+
+/* Expenses: transaction-list feel */
+.saveflow-v3 .expense-add{min-height:48px!important;font-size:13px!important}
+.saveflow-v3 .expense-list{padding:6px 15px!important}
+.saveflow-v3 .v3-expense{padding:14px 0!important}
+.saveflow-v3 .v3-expense>b{color:var(--p-ink)!important}
+.saveflow-v3 .expense-icon{transition:transform .18s ease}
+.saveflow-v3 .v3-expense:hover .expense-icon{transform:scale(1.04)}
+
+/* Bottom navigation — app-like glass dock */
+.saveflow-v3 .bottom-nav{bottom:max(12px,env(safe-area-inset-bottom))!important;width:min(620px,calc(100% - 24px))!important;padding:7px!important;border-radius:23px!important;background:rgba(255,255,255,.88)!important;backdrop-filter:blur(22px) saturate(140%)!important;-webkit-backdrop-filter:blur(22px) saturate(140%)!important;box-shadow:0 15px 45px rgba(25,50,40,.14),0 2px 8px rgba(25,50,40,.05)!important}
+.saveflow-v3 .bottom-nav button{min-height:48px!important;border-radius:17px!important;transition:background .18s ease,color .18s ease,transform .18s ease!important}
+.saveflow-v3 .bottom-nav button.active{background:#e9faf3!important;color:#079964!important;font-weight:800!important}
+.saveflow-v3 .bottom-nav button:active{transform:scale(.94)!important}
+
+/* Modals */
+.saveflow-v3 .overlay{padding:12px!important}
+.saveflow-v3 .modal{width:min(540px,100%)!important;border-radius:25px!important;padding:22px!important}
+.saveflow-v3 .modal-head{position:sticky;top:-22px;padding-top:1px;background:#fff;z-index:2}
+.saveflow-v3 .modal input,.saveflow-v3 .modal select{min-height:48px!important}
+.saveflow-v3 .primary,.saveflow-v3 .secondary{min-height:46px!important}
+
+/* Desktop/tablet: preserve mobile-first feel while using the extra width */
+@media (min-width:760px){
+  .saveflow-v3 .app{padding-top:28px!important}
+  .saveflow-v3 .v3-hero{min-height:158px!important}
+}
+@media (max-width:430px){
+  .saveflow-v3 .app{padding-left:12px!important;padding-right:12px!important}
+  .saveflow-v3 .v3-hero{padding:18px!important}
+  .saveflow-v3 .v3-hero h2{font-size:30px!important}
+  .saveflow-v3 .health-badge{min-width:103px!important}
+  .saveflow-v3 .donut-wrap{grid-template-columns:125px minmax(0,1fr)!important;gap:12px!important}
+  .saveflow-v3 .donut{width:125px!important;height:125px!important}
+}
+@media (prefers-reduced-motion:reduce){.saveflow-v3 *,.saveflow-v3 *:before,.saveflow-v3 *:after{animation:none!important;transition:none!important}}
