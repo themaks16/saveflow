@@ -10,23 +10,10 @@ export const localDateKey = (date = new Date()) => {
 }
 
 export const localMonthKey = (date = new Date()) => localDateKey(date).slice(0, 7)
-
 export const isSameLocalMonth = (value, date = new Date()) => localMonthKey(value) === localMonthKey(date)
-
-export const daysAgo = (days, date = new Date()) => {
-  const d = new Date(date)
-  d.setDate(d.getDate() - Number(days || 0))
-  return d
-}
-
-export const isWithinDays = (value, days, now = new Date()) => {
-  const d = new Date(value)
-  const limit = Number(days || 0) * 86400000
-  return !Number.isNaN(d.getTime()) && d.getTime() <= now.getTime() && now.getTime() - d.getTime() <= limit
-}
-
+export const daysAgo = (days, date = new Date()) => { const d = new Date(date); d.setDate(d.getDate() - Number(days || 0)); return d }
+export const isWithinDays = (value, days, now = new Date()) => { const d = new Date(value); const limit = Number(days || 0) * 86400000; return !Number.isNaN(d.getTime()) && d.getTime() <= now.getTime() && now.getTime() - d.getTime() <= limit }
 export const sumBy = (items = [], selector = item => item) => items.reduce((sum, item) => sum + Number(selector(item) || 0), 0)
-
 export const calculateBalance = ({ income = 0, expenses = 0, savings = 0 }) => Number(income) - Number(expenses) - Number(savings)
 
 export const calculatePaymentBalances = ({ transactions = [], initialCash = 0, initialCard = 0, savings = 0 }) => {
@@ -67,11 +54,13 @@ export const calculateDailyBudget = ({ monthlyIncome = 0, fixedCosts = 0, saving
 
 export const calculateHealth = ({ income = 0, expenses = 0, savings = 0, weeklySpent = 0, weeklyBudget = 0, emergencyMonths = 0 }) => {
   const safeIncome = Math.max(Number(income) || 0, 1)
-  const spendingRate = Math.min(1.5, Math.max(0, Number(expenses) / safeIncome))
-  const savingRate = Math.min(1, Math.max(0, Number(savings) / safeIncome))
-  const budgetScore = weeklyBudget > 0 ? Math.max(0, Math.min(1, 1 - Number(weeklySpent) / Number(weeklyBudget))) : 0.5
-  const emergencyScore = Math.min(1, Math.max(0, Number(emergencyMonths) / 3))
-  const score = 30 * Math.max(0, 1 - spendingRate) + 25 * savingRate + 20 * budgetScore + 15 * emergencyScore + 10 * (savingRate > 0 ? 1 : 0)
+  const spendingRate = Math.max(0, Number(expenses) || 0) / safeIncome
+  const savingRate = Math.max(0, Number(savings) || 0) / safeIncome
+  const budgetScore = weeklyBudget > 0 ? Math.max(0, Math.min(1, 1 - Math.max(0, Number(weeklySpent) || 0) / Number(weeklyBudget))) : 0.5
+  const emergencyScore = Math.max(0, Math.min(1, Number(emergencyMonths) / 3))
+  const spendingScore = Math.max(0, Math.min(1, 1 - spendingRate))
+  const savingScore = Math.max(0, Math.min(1, savingRate))
+  const score = 30 * spendingScore + 25 * savingScore + 20 * budgetScore + 15 * emergencyScore + 10 * (savingRate > 0 ? 1 : 0)
   return Math.round(Math.max(0, Math.min(100, score)))
 }
 
@@ -84,17 +73,6 @@ export const calculateMonthlyMetrics = ({ transactions = [], savings = [], month
   return { income, expenses, saved, balanceChange, savingsRate: income > 0 ? saved / income * 100 : 0, spendingRate: income > 0 ? expenses / income * 100 : 0 }
 }
 
-export const calculateEmergencyMonths = ({ savings = 0, monthlyEssentialCosts = 0 }) => {
-  const costs = Number(monthlyEssentialCosts) || 0
-  return costs > 0 ? Math.max(0, Number(savings) || 0) / costs : 0
-}
-
-export const calculateSpendingPace = ({ spent = 0, daysElapsed = 1, monthDays = 30, budget = 0 }) => {
-  const elapsed = Math.max(1, Number(daysElapsed) || 1)
-  const projected = Number(spent || 0) / elapsed * Number(monthDays || 30)
-  return { projected, ratio: budget > 0 ? projected / budget : 0 }
-}
-
-export const formatMoney = (amount, currency = 'MDL', locale = 'ro-MD') => new Intl.NumberFormat(locale, {
-  style: 'currency', currency, maximumFractionDigits: 0,
-}).format(fromMdl(amount, currency))
+export const calculateEmergencyMonths = ({ savings = 0, monthlyEssentialCosts = 0 }) => { const costs = Number(monthlyEssentialCosts) || 0; return costs > 0 ? Math.max(0, Number(savings) || 0) / costs : 0 }
+export const calculateSpendingPace = ({ spent = 0, daysElapsed = 1, monthDays = 30, budget = 0 }) => { const elapsed = Math.max(1, Number(daysElapsed) || 1); const projected = Number(spent || 0) / elapsed * Number(monthDays || 30); return { projected, ratio: budget > 0 ? projected / budget : 0 } }
+export const formatMoney = (amount, currency = 'MDL', locale = 'ro-MD') => new Intl.NumberFormat(locale, { style: 'currency', currency, maximumFractionDigits: 0 }).format(fromMdl(amount, currency))
