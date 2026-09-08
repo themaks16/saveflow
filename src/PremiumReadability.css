@@ -58,6 +58,11 @@
 .saveflow-v3 .income-cta p { color: #6f7c76 !important; }
 .saveflow-v3 .income-cta b { color: #079b63 !important; }
 
+/* Desktop breathing room without changing the compact mobile product width. */
+@media(min-width:760px){
+  .app-shell.saveflow-v3 .app { width:min(100%,720px)!important; }
+}
+
 @media(max-width:520px){
   .saveflow-v3 .card { padding: 16px !important; }
   .saveflow-v3 .stats-grid.home-stats .stat h3 { font-size: 22px !important; }
