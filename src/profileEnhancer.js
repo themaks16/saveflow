@@ -1,3 +1,4 @@
+import './Profile.css'
 import { supabase } from './lib/supabase'
 
 const tr = (ro, en, ru, lang) => lang === 'en' ? en : lang === 'ru' ? ru : ro
@@ -38,7 +39,7 @@ async function openProfile(){
   document.body.appendChild(o)
   const close=()=>o.remove(); o.querySelector('[data-close]').onclick=close; o.addEventListener('click',e=>{if(e.target===o)close()})
   o.querySelector('[data-name]').onclick=async()=>{const n=prompt(tr('Noul nume:','New name:','Новое имя:',lang),name);if(!n?.trim())return;const r=await supabase.auth.updateUser({data:{full_name:n.trim()}});if(r.error)alert(r.error.message);else openProfile()}
-  o.querySelector('[data-plan]').onclick=()=>{close();document.querySelector('.onboarding-overlay')?.style.setProperty('display','flex')}
+  o.querySelector('[data-plan]').onclick=()=>{close();const x=document.querySelector('.onboarding-overlay');if(x)x.style.display='flex'}
   o.querySelector('[data-language]').onchange=async e=>{await supabase.from('profiles').update({language:e.target.value,updated_at:new Date().toISOString()}).eq('id',uid);location.reload()}
   o.querySelector('[data-currency]').onchange=async e=>{await supabase.from('profiles').update({currency:e.target.value,updated_at:new Date().toISOString()}).eq('id',uid);location.reload()}
   o.querySelector('[data-theme]').onclick=()=>{document.body.classList.toggle('sf-dark');localStorage.setItem('saveflow_theme',document.body.classList.contains('sf-dark')?'dark':'light')}
@@ -46,7 +47,7 @@ async function openProfile(){
   o.querySelector('[data-export]').onclick=()=>{const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),profile:p,transactions:tx||[],goals:goals||[],savings:sav||[]},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`saveflow-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href)}
   o.querySelector('[data-report]').onclick=()=>{const text=`SaveFlow\nHealth: ${health}/100\nIncome: ${money(income,currency)}\nExpenses: ${money(expenses,currency)}\nSavings: ${money(saved,currency)}\nFixed costs: ${money(fixed,currency)}\nGoals: ${(goals||[]).length}`;const blob=new Blob([text],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='saveflow-report.txt';a.click();URL.revokeObjectURL(a.href)}
   o.querySelector('[data-password]').onclick=async()=>{const r=await supabase.auth.resetPasswordForEmail(session.user.email,{redirectTo:location.origin});alert(r.error?r.error.message:tr('Emailul pentru resetarea parolei a fost trimis.','Password reset email sent.','Письмо для сброса пароля отправлено.',lang))}
-  o.querySelector('[data-email]').onclick=async()=>{const n=prompt(tr('Noul email:','New email:','Новый email:'),session.user.email||'');if(!n||n===session.user.email)return;const r=await supabase.auth.updateUser({email:n.trim()});alert(r.error?r.error.message:tr('Verifică noul email.','Check the new email for confirmation.','Проверьте новый email для подтверждения.',lang))}
+  o.querySelector('[data-email]').onclick=async()=>{const n=prompt(tr('Noul email:','New email:','Новый email:',lang),session.user.email||'');if(!n||n===session.user.email)return;const r=await supabase.auth.updateUser({email:n.trim()});alert(r.error?r.error.message:tr('Verifică noul email.','Check the new email for confirmation.','Проверьте новый email для подтверждения.',lang))}
   o.querySelector('[data-signout]').onclick=async()=>{await supabase.auth.signOut();location.reload()}
 }
 
