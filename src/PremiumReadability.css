@@ -1,0 +1,52 @@
+/* SaveFlow Premium readability layer — keeps every dashboard value legible on light cards. */
+.saveflow-v3 .card,
+.saveflow-v3 .card * { color: #17231f; }
+.saveflow-v3 .card p,
+.saveflow-v3 .card .muted,
+.saveflow-v3 .card small,
+.saveflow-v3 .card .eyebrow { color: #6f7c76; }
+.saveflow-v3 .stats-grid .stat h3,
+.saveflow-v3 .stats-grid .stat b { color: #17231f !important; }
+.saveflow-v3 .stats-grid .stat:nth-child(2) h3 { color: #079b63 !important; }
+.saveflow-v3 .savings-card h2,
+.saveflow-v3 .savings-card h3,
+.saveflow-v3 .savings-card .savings-pill span,
+.saveflow-v3 .savings-card .savings-pill b { color: #17231f !important; }
+.saveflow-v3 .savings-card .savings-pill b { color: #079b63 !important; }
+.saveflow-v3 .smart-advice-card h3 { color: #17231f !important; }
+.saveflow-v3 .smart-advice-card p { color: #65736c !important; }
+.saveflow-v3 .advice-metrics span,
+.saveflow-v3 .advice-metrics small { color: #7b8782 !important; }
+.saveflow-v3 .advice-metrics b { color: #17231f !important; }
+.saveflow-v3 .report-grid span { color: #7b8782 !important; }
+.saveflow-v3 .report-grid b { color: #17231f !important; }
+.saveflow-v3 .v3-expense strong,
+.saveflow-v3 .v3-expense > b { color: #17231f !important; }
+.saveflow-v3 .v3-expense span,
+.saveflow-v3 .v3-expense small { color: #7b8782 !important; }
+.saveflow-v3 .page-heading h2 { color: #17231f !important; }
+.saveflow-v3 .page-heading p { color: #6f7c76 !important; }
+.saveflow-v3 .goal-card h2,
+.saveflow-v3 .goal-card strong,
+.saveflow-v3 .goal-card .budget-row { color: #17231f !important; }
+.saveflow-v3 .goal-card .budget-row { color: #6f7c76 !important; }
+.saveflow-v3 .health-card h2,
+.saveflow-v3 .health-card h3 { color: #17231f !important; }
+.saveflow-v3 .health-card p,
+.saveflow-v3 .health-card small { color: #6f7c76 !important; }
+.saveflow-v3 .fixed-cost span { color: #56645e !important; }
+.saveflow-v3 .fixed-cost b { color: #17231f !important; }
+.saveflow-v3 .chart-card h2,
+.saveflow-v3 .chart-card h3 { color: #17231f !important; }
+.saveflow-v3 .cat-row span,
+.saveflow-v3 .cat-row b { color: #17231f !important; }
+.saveflow-v3 .payment-row,
+.saveflow-v3 .payment-name { color: #56645e !important; }
+.saveflow-v3 .payment-row b { color: #17231f !important; }
+.saveflow-v3 .weekly-report .weekly-verdict.good { color: #08794e !important; }
+.saveflow-v3 .weekly-report .weekly-verdict.warn { color: #a36a00 !important; }
+
+@media(max-width:520px){
+  .saveflow-v3 .card { padding: 16px !important; }
+  .saveflow-v3 .stats-grid.home-stats .stat h3 { font-size: 22px !important; }
+}
