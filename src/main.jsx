@@ -6,6 +6,10 @@ import { supabase } from './lib/supabase'
 import './financeEnhancements'
 import App from './App.jsx'
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}))
+}
+
 globalThis.supabase = supabase
 
 createRoot(document.getElementById('root')).render(
