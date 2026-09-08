@@ -8,6 +8,7 @@ import './financeEnhancements'
 import App from './App.jsx'
 import './PremiumShell.css'
 import './PremiumReadability.css'
+import './MoneyOS.css'
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}))
