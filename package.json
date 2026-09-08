@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
+    "test:finance": "node src/lib/financeCore.test.js",
     "preview": "vite preview"
   },
   "dependencies": {
