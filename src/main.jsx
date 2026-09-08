@@ -6,6 +6,7 @@ import './MobileFix.css'
 import { supabase } from './lib/supabase'
 import './financeEnhancements'
 import App from './App.jsx'
+import './PremiumShell.css'
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}))
