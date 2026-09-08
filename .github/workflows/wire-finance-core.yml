@@ -1,0 +1,67 @@
+name: Wire finance core into App
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  wire:
+    if: ${{ !startsWith(github.event.head_commit.message, 'chore: apply finance core') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Patch App.jsx
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('src/App.jsx')
+          s = p.read_text(encoding='utf-8')
+          original = s
+
+          if "from './lib/financeCore'" not in s:
+              s = s.replace(
+                  "import './ReferenceTheme.css'",
+                  "import './ReferenceTheme.css'\nimport { RATES, toMdl, localDateKey, localMonthKey, calculateHealth } from './lib/financeCore'"
+              )
+
+          s = re.sub(r"\nconst RATES = \{ MDL: 1, EUR: 19\.5, USD: 17\.5 \}\n", "\n", s, count=1)
+
+          s = re.sub(r"const displayToMdl\s*=\s*\([^\n]+\n", "const displayToMdl = (amount, currency = 'MDL') => toMdl(amount, currency)\n", s, count=1)
+
+          s = s.replace("new Date().toISOString().slice(0, 10)", "localDateKey()")
+          s = s.replace("new Date().toISOString().slice(0,7)", "localMonthKey()")
+          s = re.sub(r"Math\.max\(0, totalIncome - totalExpenses - totalSaved\)", "totalIncome - totalExpenses - totalSaved", s, count=1)
+
+          health_pattern = re.compile(
+              r"const financialHealth = useMemo\(\(\) => \{.*?\n\s*\}, \[[^\n]*profileMonthlyIncome[^\n]*\]\)",
+              re.S,
+          )
+          health_replacement = """const financialHealth = useMemo(() => calculateHealth({\n    income: Math.max(profileMonthlyIncome, totalIncome, 0),\n    expenses: monthTotal,\n    savings: totalSaved,\n    weeklySpent: weekTotal,\n    weeklyBudget,\n    emergencyMonths: 0,\n  }), [profileMonthlyIncome, totalIncome, monthTotal, totalSaved, weekTotal, weeklyBudget])"""
+          s, health_count = health_pattern.subn(health_replacement, s, count=1)
+
+          if s == original:
+              raise SystemExit('No App.jsx changes detected')
+
+          p.write_text(s, encoding='utf-8')
+          print('App.jsx patched; health blocks replaced:', health_count)
+
+      - name: Verify build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Commit patched App
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/App.jsx
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: apply finance core wiring"
+          git push
