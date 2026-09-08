@@ -1,4 +1,10 @@
-/* SaveFlow Premium readability layer — keeps every dashboard value legible on light cards. */
+/* SaveFlow Premium readability layer — cohesive contrast for the light dashboard. */
+.saveflow-v3 .topbar,
+.saveflow-v3 .topbar * { color: #17231f; }
+.saveflow-v3 .brand-lockup h1 { color: #17231f !important; }
+.saveflow-v3 .brand-lockup h1 span { color: #18b978 !important; }
+.saveflow-v3 .brand-lockup .eyebrow { color: #7b8782 !important; }
+
 .saveflow-v3 .card,
 .saveflow-v3 .card * { color: #17231f; }
 .saveflow-v3 .card p,
@@ -10,8 +16,7 @@
 .saveflow-v3 .stats-grid .stat:nth-child(2) h3 { color: #079b63 !important; }
 .saveflow-v3 .savings-card h2,
 .saveflow-v3 .savings-card h3,
-.saveflow-v3 .savings-card .savings-pill span,
-.saveflow-v3 .savings-card .savings-pill b { color: #17231f !important; }
+.saveflow-v3 .savings-card .savings-pill span { color: #17231f !important; }
 .saveflow-v3 .savings-card .savings-pill b { color: #079b63 !important; }
 .saveflow-v3 .smart-advice-card h3 { color: #17231f !important; }
 .saveflow-v3 .smart-advice-card p { color: #65736c !important; }
@@ -27,8 +32,7 @@
 .saveflow-v3 .page-heading h2 { color: #17231f !important; }
 .saveflow-v3 .page-heading p { color: #6f7c76 !important; }
 .saveflow-v3 .goal-card h2,
-.saveflow-v3 .goal-card strong,
-.saveflow-v3 .goal-card .budget-row { color: #17231f !important; }
+.saveflow-v3 .goal-card strong { color: #17231f !important; }
 .saveflow-v3 .goal-card .budget-row { color: #6f7c76 !important; }
 .saveflow-v3 .health-card h2,
 .saveflow-v3 .health-card h3 { color: #17231f !important; }
@@ -45,6 +49,14 @@
 .saveflow-v3 .payment-row b { color: #17231f !important; }
 .saveflow-v3 .weekly-report .weekly-verdict.good { color: #08794e !important; }
 .saveflow-v3 .weekly-report .weekly-verdict.warn { color: #a36a00 !important; }
+
+.saveflow-v3 .bottom-nav button { color: #718079 !important; }
+.saveflow-v3 .bottom-nav button span { color: inherit !important; }
+.saveflow-v3 .bottom-nav button.active { color: #079b63 !important; }
+
+.saveflow-v3 .income-cta h2 { color: #17231f !important; }
+.saveflow-v3 .income-cta p { color: #6f7c76 !important; }
+.saveflow-v3 .income-cta b { color: #079b63 !important; }
 
 @media(max-width:520px){
   .saveflow-v3 .card { padding: 16px !important; }
