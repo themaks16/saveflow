@@ -58,6 +58,10 @@
 .saveflow-v3 .income-cta p { color: #6f7c76 !important; }
 .saveflow-v3 .income-cta b { color: #079b63 !important; }
 
+/* SaveFlow Plus is a Home-only tools section. Keep the enhancer loaded, but never show it on other tabs. */
+#saveflow-v4-tools { display: none !important; }
+.saveflow-v3:has(.hero-card) #saveflow-v4-tools { display: block !important; }
+
 /* Desktop breathing room without changing the compact mobile product width. */
 @media(min-width:760px){
   .app-shell.saveflow-v3 .app { width:min(100%,720px)!important; }
