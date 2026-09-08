@@ -53,7 +53,8 @@ export const calculateDailyBudget = ({ monthlyIncome = 0, fixedCosts = 0, saving
 }
 
 export const calculateHealth = ({ income = 0, expenses = 0, savings = 0, weeklySpent = 0, weeklyBudget = 0, emergencyMonths = 0 }) => {
-  const safeIncome = Math.max(Number(income) || 0, 1)
+  const safeIncome = Number(income) || 0
+  if (safeIncome <= 0) return 10
   const spendingRate = Math.max(0, Number(expenses) || 0) / safeIncome
   const savingRate = Math.max(0, Number(savings) || 0) / safeIncome
   const budgetScore = weeklyBudget > 0 ? Math.max(0, Math.min(1, 1 - Math.max(0, Number(weeklySpent) || 0) / Number(weeklyBudget))) : 0.5
